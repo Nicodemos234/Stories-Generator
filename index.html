@@ -12,10 +12,15 @@
 
 <body style="background: white;">
     <div id="image">
-        <img src="./img/Back.png" alt="Background image">
+        <div class="main-image-area">
+            <img src="./img/blank.png" alt="main image">
+        </div>
+        <img src="./img/back.png" alt="Background image">
     </div>
     <div class="main-menu">
         <button class="generate-button" onclick="saveImage();">Salvar imagem</button>
+        <input class="generate-button" type="file" onchange="loadImage();" id="loaderimage">
+
     </div>
 </body>
 
