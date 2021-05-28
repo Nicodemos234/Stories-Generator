@@ -7,7 +7,6 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="./funcs.js"></script>
 </head>
 
 <body style="background: white;">
@@ -21,9 +20,9 @@
         <img src="./img/back.png" alt="Background image">
     </div>
     <div class="main-menu">
-        <button class="generate-button" onclick="saveImage();">Salvar imagem</button>
-        <input class="generate-button" type="file" onchange="loadImage();" id="loaderimage">
-
+        <button class="generate-button" id="saveimage">Salvar imagem</button>
+        <input class="generate-button" type="file" id="loaderimage">
+        
     </div>
 </body>
 
