@@ -1,6 +1,6 @@
 <h1 align="center">Stories-Generator</h1>
 
-<h4 align="center">A ElectronJS app made to make stories for instagram quickly</h4>
+<h4 align="center">A ElectronJS app created to make stories for instagram quickly</h4>
 
 
 How to use:
