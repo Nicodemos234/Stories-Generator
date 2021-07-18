@@ -80,33 +80,36 @@ const BackgroundImageWrapper = styled.div`
     z-index: 2;
 `
 
+
 export default function Home() {
     const [mainImage, setMainImage] = useState(blankImage)
     const [title, setTitle] = useState('Insira o título')
 
-    const handleImageUpload = (event) => {
+    const handleImageUpload = (event: React.ChangeEvent<any>) => {
         const objectInput = event.target
         const files = objectInput.files
         if (FileReader && files && files.length) {
             const fr = new FileReader()
             fr.onload = function () {
-                setMainImage(fr.result)
+                setMainImage(String(fr.result))
             }
             fr.readAsDataURL(files[0])
         }
     }
 
     const handleSaveImage = () => {
-        domtoimage.toPng(document.getElementById('editor-area'), { quality: 1 })
-            .then(function (dataUrl) {
-                var link = document.createElement('a')
-                link.download = title + '.png'
-                link.href = dataUrl
-                link.click()
-            })
+        const editorArea = document.getElementById('editor-area')
+        if (editorArea != null)
+            domtoimage.toPng(editorArea, { quality: 1 })
+                .then(function (dataUrl) {
+                    var link = document.createElement('a')
+                    link.download = title + '.png'
+                    link.href = dataUrl
+                    link.click()
+                })
     }
 
-    const handleTitleChange = (event) => {
+    const handleTitleChange = (event: React.ChangeEvent<any>) => {
         setTitle(event.target.value)
     }
 

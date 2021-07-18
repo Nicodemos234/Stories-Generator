@@ -1,10 +1,11 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow }  = require('electron')
 const isDev = require('electron-is-dev')
 const path = require('path')
 
+let win = null
 
-function createWindow() {
-    let win = new BrowserWindow({
+const createWindow = () => {
+    win = new BrowserWindow({
         width: 800,
         height: 600,
         show: false,
@@ -19,7 +20,6 @@ function createWindow() {
         win.show()
         win.maximize()
     });
-
     win.on('closed', () => {
         win = null;
     })
