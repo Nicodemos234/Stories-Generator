@@ -7,7 +7,7 @@
   <h3 align="center">Stories-Generator</h3>
 
   <p align="center">
-    ElectronJS app created to make stories for instagram quickly
+    App created to make stories for Instagram quickly, made with React and Electron
     <br />
     <a href="https://github.com/nicodemos234/Stories-Generator"><strong>Explore the docs »</strong></a>
     <br />
