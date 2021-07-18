@@ -2,12 +2,17 @@
   "name": "stories-generator",
   "version": "1.0.0",
   "description": "App to generate stories fast",
-  "main": "main.js",
+  "homepage": "./",
+  "main": "./electron/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
+    "react": "react-scripts start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "build": "react-scripts build",
+    "ebuild": "yarn build && yarn make",
+    "dev": "concurrently \"yarn react\" \"wait-on http://localhost:3000 && yarn start\""
   },
   "keywords": [],
   "author": "Nicodemos234",
@@ -18,11 +23,19 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.55",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.55",
     "@electron-forge/maker-zip": "^6.0.0-beta.55",
-    "electron": "^12.0.9"
+    "electron": "^13.1.7",
+    "install-peers": "^1.0.3"
   },
   "dependencies": {
+    "concurrently": "^6.2.0",
     "dom-to-image": "^2.6.0",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-builder": "^22.11.7",
+    "electron-is-dev": "^2.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "wait-on": "^6.0.0"
   },
   "config": {
     "forge": {
@@ -50,5 +63,17 @@
         }
       ]
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
