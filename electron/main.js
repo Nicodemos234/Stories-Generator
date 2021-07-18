@@ -7,10 +7,8 @@ function createWindow() {
     let win = new BrowserWindow({
         width: 800,
         height: 600,
-        show: false
-        // webPreferences: {
-        //     preload: path.join(__dirname, 'funcs.js')
-        // }
+        show: false,
+        autoHideMenuBar: true,
     })
 
     const startURL = isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`
